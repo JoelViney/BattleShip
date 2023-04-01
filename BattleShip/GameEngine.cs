@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BattleShip
+﻿namespace BattleShip
 {
     /// <summary>
     /// Structure
@@ -97,10 +91,10 @@ namespace BattleShip
 
                     switch (direction)
                     {
-                        case 0: y = y - 1; break;
-                        case 1: x = x + 1; break;
-                        case 2: y = y + 1; break;
-                        case 3: x = x - 1; break;
+                        case 0: y--; break;
+                        case 1: x++; break;
+                        case 2: y++; break;
+                        case 3: x--; break;
                     }
                 }
 
@@ -115,10 +109,10 @@ namespace BattleShip
 
                         switch (direction)
                         {
-                            case 0: y = y - 1; break;
-                            case 1: x = x + 1; break;
-                            case 2: y = y + 1; break;
-                            case 3: x = x - 1; break;
+                            case 0: y--; break;
+                            case 1: x++; break;
+                            case 2: y++; break;
+                            case 3: x--; break;
                         }
                     }
 
@@ -143,7 +137,7 @@ namespace BattleShip
                     action = new PlayerAction(this.AttackingPlayer.Name, x, y);
 
                     // Take the shot
-                    Shot shot = new Shot();
+                    var shot = new Shot();
 
                     Ship ship = DefendingPlayer.GetShip(x, y);
                     if (ship != null)
